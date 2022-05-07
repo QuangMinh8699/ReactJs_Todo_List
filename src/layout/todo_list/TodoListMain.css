@@ -61,4 +61,22 @@
   height: 80%;
   background-color: #fff;
   border-radius: 0 0 1.5vw 1.5vw;
+  padding: 1%;
+  overflow-y: hidden;
+}
+
+.todo-main {
+  margin-bottom: 1%;
+  min-height: 20%;
+  background-color: #457c5c;
+  display: flex;
+  color: #f0f0f0;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1vw;
+}
+
+.todo {
+  width: 15vw;
+  word-wrap: break-word;
 }

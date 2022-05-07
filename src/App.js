@@ -1,5 +1,6 @@
 import "./App.css";
 import TodoListMain from "./layout/todo_list/TodoListMain";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 function App() {
   return (

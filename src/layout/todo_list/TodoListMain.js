@@ -3,13 +3,13 @@ import "./TodoListMain.css";
 
 const TodoListMain = () => {
   const [todo, setTodo] = useState("");
-  const [todoS, setTodoS] = useState([]);
+  const [todoList, setTodoList] = useState([]);
 
   const handleSubmit = () => {
-    if (todo != "") {
-      setTodoS((prev) => [todo, ...prev]);
-      setTodo("");
+    if (todo !== "") {
+      setTodoList((prev) => [todo, ...prev]);
     }
+    setTodo("");
   };
 
   return (
@@ -33,8 +33,30 @@ const TodoListMain = () => {
             />
           </div>
           <div className="todo-list-content">
-            {todoS.map((todo, index) => (
-              <div key={index}>{todo}</div>
+            {/* render todoList Array */}
+            {todoList.map((todo, index) => (
+              <div className="todo-main" key={index}>
+                <div className="todo">{todo}</div>
+                <div className="complete">
+                  <i className="bi bi-check2"></i>
+                </div>
+                <div className="delete">
+                  <i
+                    className="bi bi-x-circle"
+                    onClick={() => {
+                      let deleteValue = todoList.splice(index, 1);
+
+                      //* filter delete value
+                      let updateTodoList = todoList.filter((todoS) => {
+                        return todoS !== deleteValue;
+                      }, []);
+
+                      //* update todo list arena
+                      setTodoList(updateTodoList);
+                    }}
+                  ></i>
+                </div>
+              </div>
             ))}
           </div>
           <div className="todo-list-footer"></div>
