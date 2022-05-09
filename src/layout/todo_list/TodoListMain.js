@@ -36,10 +36,10 @@ const TodoListMain = () => {
             {/* render todoList Array */}
             {todoList.map((todo, index) => (
               <div className="todo-main" key={index}>
+                {/* Todo content */}
                 <div className="todo">{todo}</div>
-                <div className="complete">
-                  <i className="bi bi-check2"></i>
-                </div>
+
+                {/* Delete button  */}
                 <div className="delete">
                   <i
                     className="bi bi-x-circle"
